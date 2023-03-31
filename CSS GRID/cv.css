@@ -1,0 +1,69 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2, h1, h3{
+    color: rgb(32,62,67);
+    letter-spacing: 5px;
+    line-height: 40px;
+}
+hr{
+    width: 30%;
+    margin: 0;
+}
+
+.header{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 200px;
+    background-color: rgb(201, 214, 230);
+    color: rgb(33,62,95);
+
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+#logo{
+    background-image: url('../inacap.jpg');
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    justify-self: end;
+}
+#title{
+    justify-self: start;
+    line-height:24px;
+    font-weight: 900;
+}
+
+.contacto{
+
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: rgb(28,32,37);
+
+}
+
+#contacto{
+    background-color: rgb(237,244,255);
+    padding: 20px;
+    letter-spacing: 2px;
+    line-height: 40px;
+
+}
+
+#contacto ul{
+    list-style-type: none;
+}
+
+#acercade{
+    padding: 20px;
+    text-align: justify;
+}

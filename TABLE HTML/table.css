@@ -1,0 +1,33 @@
+.container{
+    width: 90%;
+    background-color: white;
+    height: 500px;
+    border-radius:20px;
+  }
+  
+body{
+    font-family: segoe UI;
+    background: rgb(6,66,241);
+    background: linear-gradient(90deg, rgba(6,66,241,1) 0%, rgba(9,105,121,1) 57%, rgba(0,219,255,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+thead > tr{
+    background-color: #333;
+    color: white;
+}
+th{
+    padding: 10px;
+}
+/*Selector Rows (Filas) Pares*/
+tbody tr:nth-child(even){
+    background-color: #c9c6c6;
+}

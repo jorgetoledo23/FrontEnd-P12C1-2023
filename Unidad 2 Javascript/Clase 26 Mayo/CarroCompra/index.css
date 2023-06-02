@@ -11,7 +11,7 @@
     left: 0px;
     margin: auto;
     height: 0px;
-    background-color: #A8C69F;
+    background-color: #FFFFFF;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     transition: 0.5s;
@@ -29,10 +29,10 @@
     display: none;
 }
 .navbar{
-background-color: #654F6F;
+    background-color: #2D3142;
 }
 .btn-carro{
-    background-color: #A8C69F;
+    background-color: #FFFFFF;
 }
 
 .flex{
@@ -44,6 +44,7 @@ background-color: #654F6F;
     border-radius: 10px;
     background-color: white;
     position: relative;
+    border: 1px solid #2D3142;
 }
 
 .btnBorrar{

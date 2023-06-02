@@ -90,7 +90,7 @@ const loadProducts = (products) =>{
 
         btnAdd.addEventListener('click', ()=>{
           const divCarro = document.createElement('div')
-          divCarro.classList.add('m-2','p-3', 'text-center', 'flex', 'custom-card')
+          divCarro.classList.add('my-2', 'mx-5','p-3', 'text-center', 'flex', 'custom-card')
 
         const divDesc = document.createElement('div')
         divDesc.style.minWidth = "50%"

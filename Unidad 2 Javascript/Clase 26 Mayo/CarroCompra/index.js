@@ -26,10 +26,36 @@ const Productos = [
         "Precio" : "799990",
         "UrlImagen" : "https://media.solotodo.com/media/products/1641307_picture_1662845386.webp",
         "Stock" : "3"
+    },
+    {
+        "ProductoId" : 3,
+        "Descripcion" : "Apple iPhone 14 Pro (128 GB / Space Black)",
+        "Precio" : "799990",
+        "UrlImagen" : "https://media.solotodo.com/media/products/1641307_picture_1662845386.webp",
+        "Stock" : "3"
+    },
+    {
+        "ProductoId" : 3,
+        "Descripcion" : "Apple iPhone 14 Pro (128 GB / Space Black)",
+        "Precio" : "799990",
+        "UrlImagen" : "https://media.solotodo.com/media/products/1641307_picture_1662845386.webp",
+        "Stock" : "3"
     }
+
 
 ]
 
+
+
+const CLFormat = new Intl.NumberFormat('es-CL',{
+    style: 'currency',
+    currency:'CLP'
+})
+
+const btnMostrarCarro = document.getElementById("MostrarCarro")
+const btnCerrarCarro = document.getElementById("CerrarCarro")
+const carroContainer = document.getElementById("carroContainer")
+const productCarroContainer = document.getElementById('productCarroContainer')
 
 
 
@@ -38,23 +64,95 @@ const loadProducts = (products) =>{
     products.forEach(P => {
         const card = document.createElement('div')
         card.className = "card"
-        card.classList.add('col-md-3', 'text-center', 'align-items-center')
+        card.classList.add('col-md-2', 'text-center', 'align-items-center', 'p-2', 'm-2')
 
 
         const h2 = document.createElement('p')
         h2.innerText = P.Descripcion
         h2.className = "text-center"
         h2.classList.add('card-title')
+        h2.style.minHeight = "60px"
 
         const img = document.createElement('img')
         img.src = P.UrlImagen
-        img.classList.add('mt-2', 'd-block')
-        img.style.width = "150px"
+        img.classList.add('mt-2', 'd-block', 'mx-auto')
+        img.style.width = "100px"
+        img.style.minHeight = "100px"
+        img.style.maxHeight = "100px"
+
+        const precio = document.createElement('p')
+        precio.innerText = CLFormat.format(P.Precio)
+
+
+        const btnAdd = document.createElement('button')
+        btnAdd.classList.add('btn', 'col-3', 'btn-outline-primary')
+        btnAdd.innerHTML = '<i class="fa-solid fa-cart-plus"></i>'
+
+        btnAdd.addEventListener('click', ()=>{
+          const divCarro = document.createElement('div')
+          divCarro.classList.add('m-2','p-3', 'text-center', 'flex', 'custom-card')
+
+        const divDesc = document.createElement('div')
+        divDesc.style.minWidth = "50%"
+
+          const descCarro = document.createElement('p')
+          descCarro.classList.add('card-title')
+          descCarro.innerText = P.Descripcion
+
+          const imgCarro = document.createElement('img')
+          imgCarro.classList.add('mt-2', 'd-block', 'mx-auto')
+          imgCarro.style.width = "100px"
+          imgCarro.style.minHeight = "100px"
+          imgCarro.style.maxHeight = "100px"
+          imgCarro.src = P.UrlImagen
+
+          const cantidadCarro = document.createElement('p')
+          cantidadCarro.classList.add('card-title')
+          cantidadCarro.innerText = 'Cantidad: '
+          const spanCantidad = document.createElement('span')
+          spanCantidad.innerText = 1
+          cantidadCarro.appendChild(spanCantidad)
+
+          const precioCarro = document.createElement('p')
+          precioCarro.classList.add('card-title')
+          precioCarro.innerText = 'Precio Unitario: ' + CLFormat.format(P.Precio)
+
+          const subTotalCarro = document.createElement('p')
+          subTotalCarro.classList.add('card-title')
+          subTotalCarro.innerText = 'Subtotal: '
+          const valorSubTotalCarro = document.createElement('span')
+          valorSubTotalCarro.innerText = CLFormat.format(P.Precio)
+          subTotalCarro.appendChild(valorSubTotalCarro)
+
+
+          const btnBorrar = document.createElement('button')
+          btnBorrar.innerHTML = '<i class="fa-solid fa-trash"></i>'
+          btnBorrar.classList.add('btnBorrar', 'btn')
+          btnBorrar.addEventListener('click', ()=> {
+            productCarroContainer.removeChild(divCarro)
+            })
+
+            
+            divCarro.appendChild(imgCarro)
+            divDesc.appendChild(descCarro)
+            divDesc.appendChild(precioCarro)
+            divDesc.appendChild(cantidadCarro)
+            divDesc.appendChild(subTotalCarro)
+            divDesc.appendChild(btnBorrar)
+            divCarro.appendChild(divDesc)
+
+            productCarroContainer.appendChild(divCarro)
+            
+
+        })
+
 
         card.appendChild(h2)
         card.appendChild(img)
+        card.appendChild(precio)
+        card.appendChild(btnAdd)
 
-        const productContainer = document.getElementById('productContainer')
+        
         productContainer.appendChild(card)
 
     });
@@ -65,17 +163,16 @@ const loadProducts = (products) =>{
 loadProducts(Productos)
 
 
-const btnMostrarCarro = document.getElementById("MostrarCarro")
-const btnCerrarCarro = document.getElementById("CerrarCarro")
-const carroContainer = document.getElementById("carroContainer")
 
 btnMostrarCarro.addEventListener('click' , () =>{
     carroContainer.style.height = '90vh'
     btnCerrarCarro.style.display = 'inline'
+    productCarroContainer.style.display = 'block'
 })
 btnCerrarCarro.addEventListener('click' , () =>{
     carroContainer.style.height = '0vh'
     btnCerrarCarro.style.display = 'none'
+    productCarroContainer.style.display = 'none'
 })
 
 

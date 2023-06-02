@@ -1,21 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #carroContainer{
     position: fixed;
-    width: 90%;
+    width: 60%;
     top: 0px;
     right: 0px;
     left: 0px;
     margin: auto;
     height: 0px;
-    background-color: white;
+    background-color: #A8C69F;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    transition: 1s;
+    transition: 0.5s;
 
 }
 
 #CerrarCarro{
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     display: none;
+}
+
+#productCarroContainer{
+    display: none;
+}
+.navbar{
+background-color: #654F6F;
+}
+.btn-carro{
+    background-color: #A8C69F;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+.custom-card{
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+}
+
+.btnBorrar{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+@media (max-width:500px){
+
+    #carroContainer{
+        width: 100%;
+    }
 }

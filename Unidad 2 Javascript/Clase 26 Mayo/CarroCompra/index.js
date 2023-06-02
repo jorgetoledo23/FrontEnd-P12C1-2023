@@ -66,14 +66,6 @@ CarroCompras = JSON.parse(localStorage.getItem('CarroCompras'))
 console.log(CarroCompras)
 cargarCarro()
 
-
-
-
-
-
-
-
-
 const loadProducts = (products) => {
 
     products.forEach(P => {

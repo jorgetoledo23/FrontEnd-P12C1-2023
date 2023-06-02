@@ -34,6 +34,10 @@
 .btn-carro{
     background-color: #FFFFFF;
 }
+.btn-agregar{
+    background-color: #2D3142;
+    color: white;
+}
 
 .flex{
     display: flex;
